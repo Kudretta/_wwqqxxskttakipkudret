@@ -1,0 +1,143 @@
+﻿<img src="SKT (1).png">
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SKT TAKİP</title>
+</head>
+<body>
+  <h1>Ürün Kayıt Listesi</h1>
+  
+  <label for="kategori"> Kategori Seçici: </label>
+  <select id="kategori">
+    <option value="SÜT ÜRÜNLERİ">SÜT ÜRÜNLERİ</option>
+    <option value="NESCAFE">NESCAFE</option>
+    <option value="YUMURTA">YUMURTA</option>
+    <option value="SOSLAR">SOSLAR</option>
+    <option value="İÇECEKLER">İÇECEKLER</option>
+    <option value="DONDURULMUŞ ÜRÜNLER">DONDURULMUŞ ÜRÜNLER</option>
+  </select>
+  <br><br>
+  
+  <label for="urun"> Ürün Seçici: </label> 
+  <select id="urun">
+    <option value="EZİNE PEYNİRİ">EZİNE PEYNİRİ</option>
+    <option value="ÇEŞNİLİ PEYNİR">ÇEŞNİLİ PEYNİR</option>
+    <option value="KLASİK PEYNİR">KLASİK PEYNİR</option>
+    <option value="KAŞAR PEYNİRİ">KAŞAR PEYNİRİ</option>
+    <option value="ÇEDAR PEYNİRİ">ÇEDAR PEYNİRİ</option>
+    <option value="500GR TEREYAĞ">500GR TEREYAĞI</option>
+    <option value="150GR TEREYAĞ">150GR TEREYAĞ</option>
+    <option value="150GR RULO KAYMAK">150GR RULO KAYMAK</option>
+    <option value="KAYMAK">KAYMAK</option>
+    <option value="YOĞURT">YOĞURT</option>
+    <option value="DONDURMA SÜTÜ">DONDURMA SÜTÜ</option>
+    <option value="SICAK SÜTLÜ ÇİKOLATA">SICAK SÜTLÜ ÇİKOLATA</option>
+    <option value="ÇEKİRDEKK KAHVE">ÇEKİRDEK KAHVE</option>
+    <option value="SÜT TOZU">SÜT TOZU</option>
+    <option value="15Lİ GOLD YUMURTA">15Lİ GOLD YUMURTA</option>
+    <option value="30LU YUMURTA">30LU YUMURTA</option>
+    <option value="RELİSH SOSU">RELİSH SOSU</option>
+    <option value="ALGERİNO">ALGERİNO</option>
+    <option value="BUFALO SOSU">BUFALO SOSU</option>
+    <option value="570GR EZME">570GR EZME</option>
+    <option value="300GR EZME">300GR EZME</option>
+    <option value="9KG ACILI EZME">9KG ACILI EZME</option>
+    <option value="330ML KUTU KOLA">330ML KUTU KOLA</option>
+    <option value="330ML KUTU FANTA">330ML KUTU FANTA</option>
+    <option value="330ML KUTU ZERO KOLA">330ML KUTU ZERO KOLA</option>
+    <option value="330ML FUSETEA ŞEFTALİ">330ML FUSETEA ŞEFTALİ</option>
+    <option value="330ML FUSETEA LİMON">330ML FUSETEA LİMON</option>
+    <option value="330ML CAPPY ŞEFTALİ">330ML CAPPY ŞEFTALİ</option>
+    <option value="ŞİŞE KOLA">ŞİŞE KOLA</option>
+    <option value="ŞİŞE FANTA">ŞİŞE FANTA</option>
+    <option value="ŞİŞE ZERO KOLA">ŞİŞE ZERO KOLA</option>
+    <option value="ACILI ŞALGAM">ACILI ŞALGAM</option>
+    <option value="ACISIZ ŞALGAM">ACISIZ ŞALGAM</option>
+    <option value="HEDİYE KOLA">HEDİYE KOLA</option>
+    <option value="250ML AYRAN">250ML AYRAN</option>
+    <option value="1LT AYRAN">1LT AYRAN</option>
+    <option value="SU">SU</option>
+    <option value="SODA">SODA</option>
+    <option value="İÇLİ KÖFTE">İÇLİ KÖFTE</option>
+    <option value="SOĞAN HALKASI">SOĞAN HALKASI</option>
+    <option value="MOZERELLA PEYNİRİ ÇITIR">MOZERELLA PEYNİRİ ÇITIR</option>
+    <option value="PATATES">PATATES</option>
+  </select>
+  <br><br>  
+  <label for="tarih1">Tarih Seçici 1: </label>
+  <input type="date" id="tarih1">
+  <br><br>
+  
+  <label for="miktar1">Miktar Seçici 1: </label>
+  <input type="number" id="miktar1" min="0">
+  <br><br>
+  
+  <label for="tarih2">Tarih Seçici 2: </label>
+  <input type="date" id="tarih2">
+  <br><br>
+  
+  <label for="miktar2">Miktar Seçici 2: </label>
+  <input type="number" id="miktar2" min="0">
+  <br><br>
+  
+  <label for="tarih3">Tarih Seçici 3: </label>
+  <input type="date" id="tarih3">
+  <br><br>
+  
+  <label for="miktar3">Miktar Seçici 3: </label>
+  <input type="number" id="miktar3" min="0">
+  <br><br>
+  
+  <button onclick="kayitEkle()">Kaydet</button>
+  <br><br>
+  
+  <h2>Kayıt Listesi</h2>
+  <ul id="kayitListesi"></ul>
+  <br>
+  
+  <button onclick="listeyiİndir()">Listeyi İndir</button>
+  
+  <script>
+    function kayitEkle() {
+      var kategori = document.getElementById("kategori").value;
+      var urun = document.getElementById("urun").value;
+      var tarih1 = document.getElementById("tarih1").value;
+      var miktar1 = document.getElementById("miktar1").value;
+      var tarih2 = document.getElementById("tarih2").value;
+      var miktar2 = document.getElementById("miktar2").value;
+      var tarih3 = document.getElementById("tarih3").value;
+      var miktar3 = document.getElementById("miktar3").value;
+      
+      var kayit = kategori + " - " + urun + " => " + tarih1 + " - " + miktar1 + " => " + tarih2 + " - " + miktar2 + " => " + tarih3 + " - " + miktar3;
+      
+      var kayitListesi = document.getElementById("kayitListesi");
+      var listItem = document.createElement("li");
+      listItem.appendChild(document.createTextNode(kayit));
+      kayitListesi.appendChild(listItem);
+    }
+    
+    function listeyiİndir() {
+  var listeIcerigi = "";
+  var listeOgesi = document.getElementById("kayitListesi");
+  var listeOgeListesi = listeOgesi.getElementsByTagName("li");
+
+  for (var i = 0; i < listeOgeListesi.length; i++) {
+    var ogeMetni = listeOgeListesi[i].textContent;
+    listeIcerigi += ogeMetni + "\r\n"; // Her sonuca yeni bir satır başı karakteri (\r\n) ekleniyor
+  }
+
+  var blob = new Blob([listeIcerigi], { type: 'text/plain;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+
+  var element = document.createElement('a');
+  element.setAttribute('href', url);
+  element.setAttribute('download', 'kayit_listesi.doc');
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+  </script>
+</body>
+</html>

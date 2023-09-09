@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title> KURUMSAL GİRİŞ </title>
+</head>
+<body>
+ 
+    <select id="kategori">
+        <label for="ŞS">ŞUBE SEÇİNİZ </label>
+        <option value="MUĞLA">  MUĞLA/FETHİYE KY MERKEZ ŞUBE  </option>
+    <select>
+    </p>
+    </p>
+<div>
+    </p>
+    </p>
+    <label for="TEMSİL KODU">ŞUBE TEMSİL KODU ==> </label>
+  <input type="text" id="text-input">
+</div>
+</p>
+</p>
+<div>
+  <button id="button">SAYIMI BAŞLAT</button>
+ </div>
+  <script>
+    const textInput = document.getElementById("text-input");
+    const button = document.getElementById("button");
+
+    button.addEventListener("click", () => {
+      const inputValue = textInput.value;
+      const expectedValue = "KYDNZ1996";
+
+      if (inputValue === expectedValue) {
+        window.location.href = "skt.html";
+      }
+    });
+  </script>
+</body>
+</html>
+  
